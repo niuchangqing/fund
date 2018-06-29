@@ -15,6 +15,7 @@ import com.alibaba.fastjson.JSON;
 import cn.com.fund.common.ThreadPool;
 import cn.com.fund.model.DetailModel;
 import cn.com.fund.model.Model;
+import cn.com.fund.service.SaveDataService;
 import cn.com.fund.service.TodayService;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
