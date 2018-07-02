@@ -55,7 +55,7 @@ public class HistoryServiceImpl implements HistoryService {
 			}
 			try {
 				List<DetailModel> details = new ArrayList<DetailModel>();
-				int index = 0;
+				int index = 1;
 				while (true) {
 					String localUrl = String.format(url, id, index);
 					Request req = new Request.Builder().url(localUrl).header("User-Agent",

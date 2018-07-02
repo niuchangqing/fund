@@ -1,6 +1,5 @@
 package cn.com.fund.common;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -20,14 +19,11 @@ public class DataSourceUtils {
 
 	static {
 		try {
-			Properties properties = new Properties();
-			InputStream in = DataSourceUtils.class.getClassLoader().getResourceAsStream("datasource.properties");
-			properties.load(in);
+			Properties properties = LoadConfigProperties.getInstance();
 
 			logger.error("初始化连接池");
 			dataSource = DruidDataSourceFactory.createDataSource(properties);
 			logger.error("初始化完毕");
-			in.close();
 		} catch (Exception e) {
 			logger.error("创建连接池异常", e);
 		}

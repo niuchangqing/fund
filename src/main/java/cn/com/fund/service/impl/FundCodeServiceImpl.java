@@ -47,7 +47,10 @@ public class FundCodeServiceImpl implements FundCodeService {
 						JSONArray parseArray = JSON.parseArray(object.toString());
 						System.out.println(parseArray.get(0));
 						if (StringUtils.isNumeric(parseArray.get(0).toString())) {
-							codes.add(parseArray.get(0).toString());
+							String code = StringUtils.trimToEmpty(parseArray.get(0).toString());
+							if (StringUtils.isNumeric(code)) {
+								codes.add(code);
+							}
 						}
 					}
 				}
